@@ -2,9 +2,11 @@ import styled from "styled-components";
 
 const LayoutStyled = styled.div`
   .main-header {
-    font-family: monospace;
-    font-weight: 800;
-    font-size: 20px;
+    &__title {
+      font-family: monospace;
+      font-weight: 800;
+      font-size: 30px;
+    }
   }
 `;
 
