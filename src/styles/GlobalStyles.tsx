@@ -1,14 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
-*, 
-*:after,
-*:before {
-  margin: 0;
-  padding: 0;
+
+*, ::after, ::before {
   box-sizing: border-box;
-  text-decoration: none;
-  }
+}
 
 body {
   padding: 20px;
@@ -18,8 +14,20 @@ body {
   min-height: 100vh;
   
 }
+
 ol, ul, li {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  
 }
 `;
 
