@@ -22,7 +22,9 @@ describe("Given the useApi custom hook", () => {
         },
       });
 
-      await getRobots;
+      await getRobots();
+
+      expect(mockDispatcher).toHaveBeenCalled();
     });
   });
 });
