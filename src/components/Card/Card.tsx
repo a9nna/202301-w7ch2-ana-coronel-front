@@ -1,4 +1,16 @@
-const Card = (): JSX.Element => {
+import { RobotStructure } from "../../types/types";
+
+interface CardProps {
+  robot: RobotStructure;
+}
+
+const Card = ({
+  robot: {
+    url: image,
+    name,
+    stats: { creationDate, endurance, speed },
+  },
+}: CardProps): JSX.Element => {
   return (
     <article className="card">
       <img
@@ -8,12 +20,12 @@ const Card = (): JSX.Element => {
         height="150"
         className="card__image"
       />
-      <h2 className="card__title">Terminator</h2>
+      <h2 className="card__title">{name}</h2>
       <div className="card__info-top">
-        <span>Speed: 5</span>
-        <span>Endurance: 7</span>
+        <span>Speed: {speed}</span>
+        <span>Endurance: {endurance}</span>
       </div>
-      <span className="card__info-bottom">Creation date: 27/03/2137</span>
+      <span className="card__info-bottom">Creation date: {creationDate}</span>
       <div className="card__buttons buttons">
         <button className="buttons__modify" aria-label="modify button">
           📝
