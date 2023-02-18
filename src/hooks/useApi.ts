@@ -7,10 +7,13 @@ const useApi = () => {
   const dispatch = useAppDispatch();
 
   const getRobots = useCallback(async () => {
-    const response = await fetch(process.env.REACT_URL_API!);
-    const robots = (await response.json()) as RobotsStructure;
-
-    dispatch(loadRobotsActionCreator(robots));
+    try {
+      const response = await fetch(process.env.REACT_URL_API!);
+      const robots = (await response.json()) as RobotsStructure;
+      dispatch(loadRobotsActionCreator(robots));
+    } catch (error) {
+      return (error as Error).message;
+    }
   }, [dispatch]);
 
   return { getRobots };
