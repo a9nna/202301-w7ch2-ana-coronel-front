@@ -33,7 +33,8 @@
 
 - Receives a list of robots
 - Shows a list of robots.
-- Sends a robot to each robot card component.
+- Shows a robot card.
+- Sends a robot card component for every robot in the list of robots.
 
 # Robot (card)
 
@@ -46,13 +47,18 @@
 - Shows a robot card.
 - Shows button to delete robot
 - Shows button to modify robot
+- Sends button icon to delete to button component
+- Sends button icon to modify to button component
+- Sends delete action to button component
+- Sends modify actionn to button component
 
 # Form
 
 - Receives the add robot action.
 - Shows inputs to receive data to create a robot.
 - Shows a button to submit data.
-- On submit executes the recived add robot action.
+- On submit, executes the recived add robot action.
+- On submit, executes the recived modify robot action.
 
 # Button
 
