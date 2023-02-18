@@ -1,6 +1,14 @@
+import { useEffect } from "react";
+import useApi from "../../hooks/useApi";
 import LayoutStyled from "./LayoutStyled";
 
 const Layout = (): JSX.Element => {
+  const { getRobots } = useApi();
+
+  useEffect(() => {
+    getRobots();
+  }, [getRobots]);
+
   return (
     <LayoutStyled>
       <header className="main-header">
