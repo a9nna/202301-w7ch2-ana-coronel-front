@@ -13,9 +13,9 @@ const RobotsList = (): JSX.Element => {
   const robots = useAppSelector((robot) => robot.robots);
 
   return (
-    <ul>
+    <ul className="row row-cols-2 row-cols-md-4">
       {robots.map((robot) => (
-        <li>
+        <li className="col" key={robot.url}>
           <Card robot={robot} />
         </li>
       ))}

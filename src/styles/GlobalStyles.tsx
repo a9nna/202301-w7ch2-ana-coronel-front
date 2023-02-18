@@ -15,6 +15,11 @@ body {
   
 }
 
+h1,h2{
+  padding: 0;
+  margin: 0;
+}
+
 ol, ul, li {
   list-style: none;
   margin: 0;
