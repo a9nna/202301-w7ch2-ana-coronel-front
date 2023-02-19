@@ -1,5 +1,8 @@
 import { rest } from "msw";
 
+const token = "victor37marc4";
+const deleteRobot = "/delete/";
+
 const handlers = [
   rest.get(`${process.env.REACT_APP_URL_API}`, (req, res, ctx) => {
     return res(
@@ -15,6 +18,13 @@ const handlers = [
       })
     );
   }),
+
+  rest.delete(
+    `${process.env.REACT_APP_URL_API}${deleteRobot}744637g?token=${token}`,
+    (req, res, ctx) => {
+      return res(ctx.status(200), ctx.json({ idRobot: "744637g" }));
+    }
+  ),
 ];
 
 export default handlers;
