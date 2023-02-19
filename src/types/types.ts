@@ -1,6 +1,6 @@
 export interface RobotStructure {
   name: string;
-  image: string;
+  url: string;
   stats: {
     speed: number;
     endurance: number;

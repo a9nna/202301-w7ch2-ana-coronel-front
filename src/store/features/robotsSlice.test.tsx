@@ -4,7 +4,7 @@ import { loadRobotsActionCreator, robotsReducer } from "./robotsSlice";
 describe("Given a loadRobots reducer", () => {
   const robot1: RobotStructure = {
     name: "Róman",
-    image: "url",
+    url: "url",
     stats: {
       speed: 5,
       endurance: 5,
@@ -13,7 +13,7 @@ describe("Given a loadRobots reducer", () => {
   };
   const robot2: RobotStructure = {
     name: "Marc",
-    image: "url",
+    url: "url",
     stats: {
       speed: 5,
       endurance: 5,

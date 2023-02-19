@@ -1,7 +1,7 @@
 import { rest } from "msw";
 
 const handlers = [
-  rest.get(`${process.env.REACT_URL_API}`, (req, res, ctx) => {
+  rest.get(`${process.env.REACT_APP_URL_API}`, (req, res, ctx) => {
     return res(
       ctx.status(200),
       ctx.json({

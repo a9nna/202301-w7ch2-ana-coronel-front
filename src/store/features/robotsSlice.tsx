@@ -5,14 +5,13 @@ const initialState: RobotsStructure = [];
 
 const robotsSlice = createSlice({
   name: "robots",
-  initialState,
+  initialState: initialState,
   reducers: {
-    loadRobots: (
-      currentState: RobotsStructure,
-      action: PayloadAction<RobotsStructure>
-    ) => [...action.payload],
+    loadRobots: (currentState, action: PayloadAction<RobotsStructure>) => [
+      ...action.payload,
+    ],
   },
 });
 
-export const robotsReducer = robotsSlice.reducer;
 export const { loadRobots: loadRobotsActionCreator } = robotsSlice.actions;
+export const robotsReducer = robotsSlice.reducer;

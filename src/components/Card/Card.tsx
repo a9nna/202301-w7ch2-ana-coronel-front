@@ -1,28 +1,48 @@
-const Card = (): JSX.Element => {
+import { RobotStructure } from "../../types/types";
+
+interface CardProps {
+  robot: RobotStructure;
+}
+
+const Card = ({
+  robot: {
+    url: image,
+    name,
+    stats: { creationDate, endurance, speed },
+  },
+}: CardProps): JSX.Element => {
   return (
-    <article className="card">
+    <div className="card">
       <img
-        src="https://media.vandal.net/i/620x387/1-2022/20221181037175_1.jpg"
-        alt="Terminator"
+        src={image}
+        alt={name}
         width="200"
         height="150"
-        className="card__image"
+        className="card-image-top"
       />
-      <h2 className="card__title">Terminator</h2>
-      <div className="card__info-top">
-        <span>Speed: 5</span>
-        <span>Endurance: 7</span>
+      <div className="card-body">
+        <h2 className="card-title">{name}</h2>
       </div>
-      <span className="card__info-bottom">Creation date: 27/03/2137</span>
-      <div className="card__buttons buttons">
-        <button className="buttons__modify" aria-label="modify button">
+      <ul className="list-group list-group-flush">
+        <li className="list-group-item">Speed: {speed}</li>
+        <li className="list-group-item">Endurance: {endurance}</li>
+        <li className="list-group-item">{creationDate}</li>
+      </ul>
+      <div className="card-body card__buttons buttons">
+        <button
+          className="card-link buttons__modify"
+          aria-label="modify button"
+        >
           📝
         </button>
-        <button className="buttons__delete" aria-label="delete button">
+        <button
+          className="card-link buttons__delete"
+          aria-label="delete button"
+        >
           🗑️
         </button>
       </div>
-    </article>
+    </div>
   );
 };
 
