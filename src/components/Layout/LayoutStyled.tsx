@@ -6,7 +6,7 @@ const LayoutStyled = styled.div`
       font-family: monospace;
       font-weight: 800;
       font-size: 50px;
-      padding: 0 25px;
+      padding: 0 10px;
     }
   }
 `;
