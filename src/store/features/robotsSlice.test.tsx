@@ -1,8 +1,13 @@
 import { RobotsStructure, RobotStructure } from "../../types/types";
-import { loadRobotsActionCreator, robotsReducer } from "./robotsSlice";
+import {
+  deleteRobotActionCreator,
+  loadRobotsActionCreator,
+  robotsReducer,
+} from "./robotsSlice";
 
-describe("Given a loadRobots reducer", () => {
+describe("Given a robots reducer", () => {
   const robot1: RobotStructure = {
+    id: "456456",
     name: "Róman",
     url: "url",
     stats: {
@@ -12,6 +17,7 @@ describe("Given a loadRobots reducer", () => {
     },
   };
   const robot2: RobotStructure = {
+    id: "98843ry",
     name: "Marc",
     url: "url",
     stats: {
@@ -31,5 +37,14 @@ describe("Given a loadRobots reducer", () => {
 
       expect(newRobots).toStrictEqual(expectedRobotsToLoad);
     });
+  });
+
+  test("Then it should return a list of 1 robot", () => {
+    const deleteRobotsAction = deleteRobotActionCreator(robot1);
+    const expectedRobots: RobotsStructure = [robot2];
+
+    const newRobots = robotsReducer(robots, deleteRobotsAction);
+
+    expect(newRobots).toStrictEqual(expectedRobots);
   });
 });
