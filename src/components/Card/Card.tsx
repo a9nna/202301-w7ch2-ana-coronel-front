@@ -12,6 +12,8 @@ const Card = ({
     stats: { creationDate, endurance, speed },
   },
 }: CardProps): JSX.Element => {
+  const localDateFormat = creationDate.toLocaleString().split("T")[0];
+
   return (
     <CardStyled className="card">
       <img
@@ -27,7 +29,7 @@ const Card = ({
       <ul className="list-group list-group-flush">
         <li className="list-group-item">Speed: {speed}</li>
         <li className="list-group-item">Endurance: {endurance}</li>
-        <li className="list-group-item">Creation: {creationDate}</li>
+        <li className="list-group-item">Creation: {localDateFormat}</li>
       </ul>
       <div className="card-body card__buttons buttons">
         <button
