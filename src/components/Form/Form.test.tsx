@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import Wrapper from "../../mocks/Wrapper";
 import Form from "./Form";
 
 describe("Given a Form component", () => {
@@ -6,7 +7,11 @@ describe("Given a Form component", () => {
     test("Then it should show an label with an aria-label text 'Robot name'", () => {
       const ariaLabelText = "Robot name";
 
-      render(<Form />);
+      render(
+        <Wrapper>
+          <Form />
+        </Wrapper>
+      );
 
       const expectedText = screen.getByLabelText(ariaLabelText);
 
@@ -16,7 +21,11 @@ describe("Given a Form component", () => {
     test("Then it should show a button with the text 'Create Robot'", () => {
       const buttonText = "Create Robot";
 
-      render(<Form />);
+      render(
+        <Wrapper>
+          <Form />
+        </Wrapper>
+      );
 
       const expectedButtonText = screen.getByRole("button", {
         name: buttonText,
