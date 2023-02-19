@@ -9,6 +9,7 @@ import { RobotStructure } from "../types/types";
 
 const deleteRobot = "/delete/";
 const addRobot = "/create/";
+const token = "victor37marc4";
 
 const useApi = () => {
   const dispatch = useAppDispatch();
@@ -32,7 +33,7 @@ const useApi = () => {
     async (robot: RobotStructure) => {
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_URL_API}${deleteRobot}${robot.id}`,
+          `${process.env.REACT_APP_URL_API}${deleteRobot}${robot.id}?token=${token}`,
           {
             method: "DELETE",
           }
