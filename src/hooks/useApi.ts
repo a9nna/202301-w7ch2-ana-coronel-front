@@ -8,6 +8,7 @@ import { useAppDispatch } from "../store/hooks";
 import { RobotStructure } from "../types/types";
 
 const deleteRobot = "/delete/";
+
 const addRobot = "/create/";
 const token = "victor37marc4";
 
