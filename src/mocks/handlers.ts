@@ -3,7 +3,7 @@ import { rest } from "msw";
 const token = "victor37marc4";
 const deleteRobot = "/delete/";
 
-const handlers = [
+export const handlers = [
   rest.get(`${process.env.REACT_APP_URL_API}`, (req, res, ctx) => {
     return res(
       ctx.status(200),
@@ -27,4 +27,8 @@ const handlers = [
   ),
 ];
 
-export default handlers;
+export const errorHandlers = [
+  rest.get(`${process.env.REACT_APP_URL_API}`, (req, res, ctx) => {
+    return res(ctx.status(404));
+  }),
+];
