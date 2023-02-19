@@ -8,6 +8,7 @@ import { useAppDispatch } from "../store/hooks";
 import { RobotStructure } from "../types/types";
 
 const deleteRobot = "/delete/";
+const addRobot = "/create/";
 
 const useApi = () => {
   const dispatch = useAppDispatch();
@@ -51,21 +52,24 @@ const useApi = () => {
 
   const createRobot = useCallback(
     async (robot: RobotStructure) => {
-      const response = await fetch(`${process.env.REACT_APP_URL_API}`, {
-        method: "POST",
-        body: JSON.stringify({
-          name: robot.name,
-          url: robot.url,
-          stats: {
-            speed: robot.stats.speed,
-            endurance: robot.stats.endurance,
-            creationDate: robot.stats.creationDate,
-          },
-          headers: {
-            "Content-type": "application/json; charset=UTF-8",
-          },
-        }),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_URL_API}${addRobot}`,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            name: robot.name,
+            url: robot.url,
+            stats: {
+              speed: robot.stats.speed,
+              endurance: robot.stats.endurance,
+              creationDate: robot.stats.creationDate,
+            },
+            headers: {
+              "Content-type": "application/json; charset=UTF-8",
+            },
+          }),
+        }
+      );
 
       if (!response.ok) {
         return;

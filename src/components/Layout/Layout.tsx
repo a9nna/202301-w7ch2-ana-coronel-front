@@ -1,3 +1,4 @@
+import Form from "../Form/Form";
 import RobotsList from "../RobotsList/RobotsList";
 import LayoutStyled from "./LayoutStyled";
 
@@ -7,7 +8,9 @@ const Layout = (): JSX.Element => {
       <header className="main-header">
         <h1 className="main-header__title">Robots</h1>
       </header>
+
       <RobotsList />
+      <Form />
     </LayoutStyled>
   );
 };
