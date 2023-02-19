@@ -3,7 +3,7 @@ import styled from "styled-components";
 const CardStyled = styled.article`
   display: flex;
   flex-direction: column;
-  width: 300px;
+  min-width: 300px;
   height: 428px;
   background-color: #eeebeb;
   border: none;
