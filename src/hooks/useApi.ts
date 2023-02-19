@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import {
+  createRobotActionCreator,
   deleteRobotActionCreator,
   loadRobotsActionCreator,
 } from "../store/features/robotsSlice";
@@ -7,6 +8,8 @@ import { useAppDispatch } from "../store/hooks";
 import { RobotStructure } from "../types/types";
 
 const deleteRobot = "/delete/";
+
+const addRobot = "/create/";
 const token = "victor37marc4";
 
 const useApi = () => {
@@ -49,7 +52,37 @@ const useApi = () => {
     [dispatch]
   );
 
-  return { getRobots, deleteRobots };
+  const createRobot = useCallback(
+    async (robot: RobotStructure) => {
+      const response = await fetch(
+        `${process.env.REACT_APP_URL_API}${addRobot}`,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            name: robot.name,
+            url: robot.url,
+            stats: {
+              speed: robot.stats.speed,
+              endurance: robot.stats.endurance,
+              creationDate: robot.stats.creationDate,
+            },
+            headers: {
+              "Content-type": "application/json; charset=UTF-8",
+            },
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        return;
+      }
+
+      dispatch(createRobotActionCreator(robot));
+    },
+    [dispatch]
+  );
+
+  return { getRobots, deleteRobots, createRobot };
 };
 
 export default useApi;

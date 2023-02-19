@@ -1,5 +1,6 @@
 import { RobotsStructure, RobotStructure } from "../../types/types";
 import {
+  createRobotActionCreator,
   deleteRobotActionCreator,
   loadRobotsActionCreator,
   robotsReducer,
@@ -44,6 +45,15 @@ describe("Given a robots reducer", () => {
     const expectedRobots: RobotsStructure = [robot2];
 
     const newRobots = robotsReducer(robots, deleteRobotsAction);
+
+    expect(newRobots).toStrictEqual(expectedRobots);
+  });
+
+  test("Then it should return a list of 3 robots", () => {
+    const createRobotsAction = createRobotActionCreator(robot1);
+    const expectedRobots: RobotsStructure = [robot1, robot2, robot1];
+
+    const newRobots = robotsReducer(robots, createRobotsAction);
 
     expect(newRobots).toStrictEqual(expectedRobots);
   });
