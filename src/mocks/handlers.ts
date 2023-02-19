@@ -31,4 +31,11 @@ export const errorHandlers = [
   rest.get(`${process.env.REACT_APP_URL_API}`, (req, res, ctx) => {
     return res(ctx.status(404));
   }),
+
+  rest.delete(
+    `${process.env.REACT_APP_URL_API}${deleteRobot}744637g?token=${token}`,
+    (req, res, ctx) => {
+      return res(ctx.status(404));
+    }
+  ),
 ];
