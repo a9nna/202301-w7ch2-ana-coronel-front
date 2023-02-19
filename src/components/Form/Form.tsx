@@ -62,63 +62,74 @@ const Form = (): JSX.Element => {
 
   return (
     <FormStyled className="form" onSubmit={onSubmitHandler}>
-      <label htmlFor="Name" aria-label="Robot name" className="form__name">
-        Name
-      </label>
-      <input
-        type="text"
-        placeholder="Name"
-        className="form__input"
-        onChange={handleName}
-        value={name}
-      />
-      <label htmlFor="Image" aria-label="Robot image" className="form__name">
-        Image
-      </label>
-      <input
-        type="text"
-        placeholder="Image"
-        className="form__input"
-        onChange={handleImage}
-        value={url}
-      />
-      <label htmlFor="Speed" aria-label="Speed stat" className="form__name">
-        Speed
-      </label>
-      <input
-        type="text"
-        placeholder="Speed"
-        className="form__input"
-        onChange={handleSpeed}
-        value={speed}
-      />
-      <label
-        htmlFor="Endurance"
-        aria-label="Endurance stat"
-        className="form__name"
-      >
-        Endurance
-      </label>
-      <input
-        type="text"
-        placeholder="Endurance"
-        className="form__input"
-        onChange={handleEndurance}
-        value={endurance}
-      />
-      <label
-        htmlFor="Creation date"
-        aria-label="Creation date"
-        className="form__name"
-      >
-        Creation date
-      </label>
-      <input
-        type="date"
-        className="form__input"
-        onChange={handleDate}
-        value={creationDate}
-      />
+      <h2>Create your Robot</h2>
+      <div className="form__section">
+        <label htmlFor="Name" aria-label="name" className="form__name">
+          Name
+        </label>
+        <input
+          type="text"
+          placeholder="Name"
+          className="form__input"
+          onChange={handleName}
+          value={name}
+        />
+      </div>
+      <div className="form__section">
+        <label htmlFor="Image" aria-label="image" className="form__name">
+          Image
+        </label>
+        <input
+          type="text"
+          placeholder="Image"
+          className="form__input"
+          onChange={handleImage}
+          value={url}
+        />
+      </div>
+      <div className="form__section">
+        <label htmlFor="Speed" aria-label="speed" className="form__name">
+          Speed
+        </label>
+        <input
+          type="text"
+          placeholder="Speed"
+          className="form__input"
+          onChange={handleSpeed}
+          value={speed}
+        />
+      </div>
+      <div className="form__section">
+        <label
+          htmlFor="Endurance"
+          aria-label="endurance"
+          className="form__name"
+        >
+          Endurance
+        </label>
+        <input
+          type="text"
+          placeholder="Endurance"
+          className="form__input"
+          onChange={handleEndurance}
+          value={endurance}
+        />
+      </div>
+      <div className="form__section">
+        <label
+          htmlFor="Creation date"
+          aria-label="creation-date"
+          className="form__name"
+        >
+          Creation date
+        </label>
+        <input
+          type="date"
+          className="form__input"
+          onChange={handleDate}
+          value={creationDate}
+        />
+      </div>
       <button type="submit" className="form__button">
         Create Robot
       </button>

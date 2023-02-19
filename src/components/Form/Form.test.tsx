@@ -5,7 +5,7 @@ import Form from "./Form";
 describe("Given a Form component", () => {
   describe("When it is rendered", () => {
     test("Then it should show an label with an aria-label text 'Robot name'", () => {
-      const ariaLabelText = "Robot name";
+      const ariaLabelText = "name";
 
       render(
         <Wrapper>
