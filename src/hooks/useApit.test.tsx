@@ -80,4 +80,25 @@ describe("Given the useApi custom hook", () => {
       expect(mockDispatcher).toHaveBeenCalled();
     });
   });
+
+  describe("When the deleteRobots function is called with a terminator robot and the request is failed", () => {
+    beforeEach(() => {
+      server.resetHandlers(...errorHandlers);
+    });
+    test("Then it should not call the dispatch", async () => {
+      const {
+        result: {
+          current: { deleteRobots },
+        },
+      } = renderHook(() => useApi(), {
+        wrapper({ children }) {
+          return <Wrapper>{children}</Wrapper>;
+        },
+      });
+
+      await deleteRobots(mockTerminatorRobot);
+
+      expect(mockDispatcher).not.toHaveBeenCalled();
+    });
+  });
 });
