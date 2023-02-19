@@ -35,7 +35,7 @@ const Card = ({ robot }: CardProps): JSX.Element => {
         >
           📝
         </button>
-        <RemoveButton robot={robot} />
+        <RemoveButton robot={robot} aria-label="delete button" />
       </div>
     </CardStyled>
   );

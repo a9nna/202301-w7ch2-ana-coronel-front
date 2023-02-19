@@ -1,6 +1,7 @@
 import Card from "./Card";
 import { render, screen } from "@testing-library/react";
 import { RobotStructure } from "../../types/types";
+import Wrapper from "../../mocks/Wrapper";
 
 const terminatorRobot: RobotStructure = {
   id: "",
@@ -15,7 +16,11 @@ const terminatorRobot: RobotStructure = {
 
 describe("Given a Card component", () => {
   describe("When it is rendered", () => {
-    render(<Card robot={terminatorRobot} />);
+    render(
+      <Wrapper>
+        <Card robot={terminatorRobot} />
+      </Wrapper>
+    );
     test("Then it should show an image with the alt text 'Terminator'", () => {
       const altText = "Terminator";
 
@@ -33,9 +38,13 @@ describe("Given a Card component", () => {
     expect(expectedTitle).toBeInTheDocument();
   });
 
-  test("Then it should show a button with the aria-label text 'delete button'", () => {
-    const deleteIcon = "delete button";
-    render(<Card robot={terminatorRobot} />);
+  test("Then it should show a button with this icon '🗑️'", () => {
+    const deleteIcon = "🗑️";
+    render(
+      <Wrapper>
+        <Card robot={terminatorRobot} />
+      </Wrapper>
+    );
 
     const expectedButtoIcon = screen.getByRole("button", { name: deleteIcon });
 
