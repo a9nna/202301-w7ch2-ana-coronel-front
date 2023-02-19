@@ -3,6 +3,7 @@ import { loadRobotsActionCreator, robotsReducer } from "./robotsSlice";
 
 describe("Given a loadRobots reducer", () => {
   const robot1: RobotStructure = {
+    id: "",
     name: "Róman",
     url: "url",
     stats: {
@@ -12,6 +13,7 @@ describe("Given a loadRobots reducer", () => {
     },
   };
   const robot2: RobotStructure = {
+    id: "",
     name: "Marc",
     url: "url",
     stats: {

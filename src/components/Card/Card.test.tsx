@@ -3,6 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { RobotStructure } from "../../types/types";
 
 const terminatorRobot: RobotStructure = {
+  id: "",
   name: "Terminator",
   url: "",
   stats: {
