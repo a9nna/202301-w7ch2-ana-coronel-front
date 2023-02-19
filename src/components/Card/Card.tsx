@@ -1,4 +1,5 @@
 import { RobotStructure } from "../../types/types";
+import CardStyled from "./CardStyled";
 
 interface CardProps {
   robot: RobotStructure;
@@ -12,13 +13,13 @@ const Card = ({
   },
 }: CardProps): JSX.Element => {
   return (
-    <div className="card">
+    <CardStyled className="card">
       <img
         src={image}
         alt={name}
-        width="200"
-        height="150"
-        className="card-image-top"
+        width="300"
+        height="180"
+        className="card-image-top card__image"
       />
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
@@ -26,7 +27,7 @@ const Card = ({
       <ul className="list-group list-group-flush">
         <li className="list-group-item">Speed: {speed}</li>
         <li className="list-group-item">Endurance: {endurance}</li>
-        <li className="list-group-item">{creationDate}</li>
+        <li className="list-group-item">Creation: {creationDate}</li>
       </ul>
       <div className="card-body card__buttons buttons">
         <button
@@ -42,7 +43,7 @@ const Card = ({
           🗑️
         </button>
       </div>
-    </div>
+    </CardStyled>
   );
 };
 
