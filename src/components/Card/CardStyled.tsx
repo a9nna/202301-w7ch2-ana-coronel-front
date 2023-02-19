@@ -9,6 +9,7 @@ const CardStyled = styled.article`
   border: none;
   border-radius: 20px;
   box-shadow: 8px 5px 15px black;
+  overflow: hidden;
 
   :hover {
     translate: 10px;
@@ -20,6 +21,10 @@ const CardStyled = styled.article`
       min-height: 180px;
       border-radius: 20px 20px 0 0;
     }
+  }
+
+  .card-title {
+    font-size: 25px;
   }
 
   ul {
