@@ -6,6 +6,8 @@ import {
 import { useAppDispatch } from "../store/hooks";
 import { RobotStructure } from "../types/types";
 
+const deleteRobot = "/delete/";
+
 const useApi = () => {
   const dispatch = useAppDispatch();
 
@@ -28,7 +30,7 @@ const useApi = () => {
     async (robot: RobotStructure) => {
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_URL_API}${robot.id}`,
+          `${process.env.REACT_APP_URL_API}${deleteRobot}${robot.id}`,
           {
             method: "DELETE",
           }

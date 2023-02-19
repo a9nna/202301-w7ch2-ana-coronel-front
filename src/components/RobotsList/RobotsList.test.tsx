@@ -5,9 +5,9 @@ import RobotsList from "./RobotsList";
 
 const mockRobotsList: RobotsStructure = [
   {
-    id: "",
+    id: "744637g",
     name: "Terminator",
-    url: "",
+    url: "jlbhjl",
     stats: {
       speed: 1,
       endurance: 1,
