@@ -10,8 +10,8 @@ const RobotListStyled = styled.ul`
   grid-column-gap: 20px;
 
   @media (min-width: 600px) {
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-column-gap: 1rem;
   }
 
   li {
