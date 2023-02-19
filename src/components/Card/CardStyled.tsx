@@ -8,6 +8,12 @@ const CardStyled = styled.article`
   background-color: #eeebeb;
   border: none;
   border-radius: 20px;
+  box-shadow: 8px 5px 15px black;
+
+  :hover {
+    translate: 10px;
+  }
+
   .card {
     &__image {
       width: 100%;

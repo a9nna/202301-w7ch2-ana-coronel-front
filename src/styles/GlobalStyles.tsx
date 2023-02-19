@@ -7,7 +7,7 @@ const GlobalStyles = createGlobalStyle`
 }
 
 body {
-  padding: 20px;
+  padding: 50px;
   background-color: #fff;
   font-family: monospace;
   width: 100%;

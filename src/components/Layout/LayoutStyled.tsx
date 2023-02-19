@@ -5,7 +5,7 @@ const LayoutStyled = styled.div`
     &__title {
       font-family: monospace;
       font-weight: 800;
-      font-size: 30px;
+      font-size: 50px;
       padding: 0 25px;
     }
   }
