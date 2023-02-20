@@ -62,6 +62,7 @@ const Form = (): JSX.Element => {
 
   return (
     <FormStyled className="form" onSubmit={onSubmitHandler}>
+      <h2>Create your Robot</h2>
       <div className="form__section">
         <label htmlFor="Name" aria-label="name" className="form__name">
           Name

@@ -23,7 +23,7 @@ const FormStyled = styled.form`
       height: 30px;
 
       @media (min-width: 600px) {
-        width: 600px;
+        width: 400px;
       }
     }
 
@@ -34,7 +34,7 @@ const FormStyled = styled.form`
       width: 100%;
 
       @media (min-width: 600px) {
-        width: 600px;
+        width: 400px;
       }
     }
   }

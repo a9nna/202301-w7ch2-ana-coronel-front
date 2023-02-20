@@ -66,10 +66,10 @@ const useApi = () => {
               endurance: robot.stats.endurance,
               creationDate: robot.stats.creationDate,
             },
-            headers: {
-              "Content-type": "application/json; charset=UTF-8",
-            },
           }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
         }
       );
 
