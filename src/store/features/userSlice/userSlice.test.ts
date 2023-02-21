@@ -8,15 +8,18 @@ describe("Given the userReducer function", () => {
         token: "",
         id: 0,
         isLogged: false,
+        username: "",
       };
       const newUser: User = {
         token: "dhui8a2j!",
         id: 92,
+        username: "",
       };
       const expectedNewUser: UserStatus = {
         token: "dhui8a2j!",
         id: 92,
         isLogged: true,
+        username: "",
       };
 
       const user = userReducer(currentUser, loginUserActionCreator(newUser));
