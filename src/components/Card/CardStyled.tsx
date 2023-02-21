@@ -20,6 +20,7 @@ const CardStyled = styled.article`
       width: 100%;
       min-height: 180px;
       border-radius: 20px 20px 0 0;
+      object-fit: cover;
     }
   }
 
