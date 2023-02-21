@@ -1,4 +1,4 @@
-import useApi from "../../hooks/useApi";
+import useApi from "../../hooks/useApi/useApi";
 import { RobotStructure } from "../../types/types";
 import Button from "../Button/Button";
 

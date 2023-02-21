@@ -1,9 +1,9 @@
 import { renderHook } from "@testing-library/react";
 import useApi from "./useApi";
-import Wrapper from "../mocks/Wrapper";
-import { RobotStructure } from "../types/types";
-import { server } from "../mocks/server";
-import { errorHandlers } from "../mocks/handlers";
+import Wrapper from "../../mocks/Wrapper";
+import { RobotStructure } from "../../types/types";
+import { errorHandlers } from "../../mocks/handlers";
+import { server } from "../../mocks/server";
 
 const mockTerminatorRobot: RobotStructure = {
   id: "744637g",
@@ -18,8 +18,8 @@ const mockTerminatorRobot: RobotStructure = {
 
 const mockDispatcher = jest.fn();
 
-jest.mock("../store/hooks", () => ({
-  ...jest.requireActual("../store/hooks"),
+jest.mock("../../store/hooks", () => ({
+  ...jest.requireActual("../../store/hooks"),
   useAppDispatch: () => mockDispatcher,
 }));
 

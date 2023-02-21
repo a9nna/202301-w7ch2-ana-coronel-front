@@ -1,4 +1,4 @@
-import { RobotsStructure, RobotStructure } from "../../types/types";
+import { RobotsStructure, RobotStructure } from "../../../types/types";
 import {
   createRobotActionCreator,
   deleteRobotActionCreator,
