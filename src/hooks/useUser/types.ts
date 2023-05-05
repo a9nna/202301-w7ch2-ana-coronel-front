@@ -1,7 +1,6 @@
 export interface UserCredentials {
   username: string;
   password: string;
-  id: number;
 }
 
 export interface LoginResponse {
@@ -10,6 +9,5 @@ export interface LoginResponse {
 
 export interface LoginPayload {
   username: string;
-  id: number;
   token: string;
 }

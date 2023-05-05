@@ -19,9 +19,9 @@ const useUser = (): UseUserStructure => {
     });
 
     const { token } = (await response.json()) as LoginResponse;
-    const { username, id } = decodeToken(token) as UserCredentials;
+    const { username } = decodeToken(token) as UserCredentials;
 
-    dispatch(loginUserActionCreator({ username, id, token }));
+    dispatch(loginUserActionCreator({ username, token }));
   };
 
   return { loginUser };
