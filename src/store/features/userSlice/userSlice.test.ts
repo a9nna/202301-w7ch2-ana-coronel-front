@@ -6,18 +6,15 @@ describe("Given the userReducer function", () => {
     test.only("Then it should return the new user with its property isLogged to true", () => {
       const currentUser: UserStatus = {
         token: "",
-        id: 0,
         isLogged: false,
         username: "",
       };
       const newUser: User = {
         token: "dhui8a2j!",
-        id: 92,
         username: "",
       };
       const expectedNewUser: UserStatus = {
         token: "dhui8a2j!",
-        id: 92,
         isLogged: true,
         username: "",
       };

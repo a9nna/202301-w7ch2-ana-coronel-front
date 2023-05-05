@@ -3,7 +3,6 @@ import { User, UserStatus } from "./types";
 
 const initialState: UserStatus = {
   token: "",
-  id: 0,
   isLogged: false,
   username: "",
 };
@@ -12,8 +11,13 @@ const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    loginUser: (currentUserState, action: PayloadAction<User>) => ({
-      ...action.payload,
+    loginUser: (
+      currentUserState: UserStatus,
+      action: PayloadAction<User>
+    ): UserStatus => ({
+      ...currentUserState,
+      token: action.payload.token,
+      username: action.payload.username,
       isLogged: true,
     }),
   },
